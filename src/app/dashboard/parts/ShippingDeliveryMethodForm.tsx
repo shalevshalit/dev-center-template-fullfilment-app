@@ -24,8 +24,8 @@ export function ShippingDeliveryMethodForm({
     unitOfMeasure === ShippingUnitOfMeasure.NUM_OF_ITEMS
       ? 'item'
       : unitOfMeasure === ShippingUnitOfMeasure.WEIGHT_IN_LB
-        ? 'Lb'
-        : 'Kg';
+        ? 'lb'
+        : 'kg';
   const [isOpen, setIsOpen] = useState(expandByDefault);
   return (
     <Card>
@@ -44,9 +44,9 @@ export function ShippingDeliveryMethodForm({
                   sameOptionWasPicked ? null : onUnitOfMeasureSelected(option.id as ShippingUnitOfMeasure)
                 }
                 options={[
-                  { id: ShippingUnitOfMeasure.NUM_OF_ITEMS, value: 'Number of Items' },
-                  { id: ShippingUnitOfMeasure.WEIGHT_IN_KG, value: 'Weight in Kg' },
-                  { id: ShippingUnitOfMeasure.WEIGHT_IN_LB, value: 'Weight in Pounds' },
+                  { id: ShippingUnitOfMeasure.NUM_OF_ITEMS, value: 'Number of items' },
+                  { id: ShippingUnitOfMeasure.WEIGHT_IN_KG, value: 'Weight in kg' },
+                  { id: ShippingUnitOfMeasure.WEIGHT_IN_LB, value: 'Weight in lb' },
                 ]}
                 placeholder='Select parameter'
               />
@@ -82,10 +82,10 @@ export function ShippingDeliveryMethodForm({
                   </FormField>
                 </Cell>
                 <Cell span={4}>
-                  <FormField label={`Each Additional ${uomName}`}>
+                  <FormField label={`Each additional ${uomName}`}>
                     <Input
                       prefix={<Input.Affix>$</Input.Affix>}
-                      suffix={<Input.Affix>Per {uomName}</Input.Affix>}
+                      suffix={<Input.Affix>per {uomName}</Input.Affix>}
                       value={shippingCosts.thirdAndUp}
                       onChange={(e) => {
                         onShippingCostsChanged({ ...shippingCosts, thirdAndUp: Number(e.currentTarget.value) });

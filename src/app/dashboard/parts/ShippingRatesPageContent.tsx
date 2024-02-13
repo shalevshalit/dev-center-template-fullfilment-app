@@ -28,13 +28,13 @@ export const ShippingRatesPageContent = ({}: {}) => {
     persistShippingAppData(currentShippingAppData!)
       .then(() => {
         showToast({
-          message: 'Shipping rates saved successfully',
+          message: 'Shipping rates saved successfully.',
           type: 'success',
         });
       })
       .catch(() => {
         showToast({
-          message: 'Failed to save shipping rates',
+          message: 'Failed to save shipping rates.',
           type: 'error',
         });
       })
@@ -90,7 +90,7 @@ export const ShippingRatesPageContent = ({}: {}) => {
           />
         }
         title='Shipping Rate App'
-        subtitle='Tailor shipping charges based on delivery speed and items quantity, ensuring a flexible and cost-effective solution for your business.'
+        subtitle='Customize shipping fees based on item quantity, weight, and delivery speed, ensuring a flexible and cost-effective solution for your business.'
       />
       <Page.Content>
         <Layout>

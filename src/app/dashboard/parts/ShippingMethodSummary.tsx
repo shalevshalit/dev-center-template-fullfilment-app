@@ -15,7 +15,7 @@ export function ShippingMethodSummary() {
 
   return (
     <Card>
-      <Card.Header title='Your last orders' />
+      <Card.Header title='Recent orders' />
       <Card.Divider />
       <Card.Content>
         <Box direction='vertical' paddingBottom='SP3'>
@@ -63,13 +63,13 @@ export function ShippingMethodSummary() {
             ))
           ) : (
             <Text size='small' weight='thin'>
-              No orders found
+              No orders found.
             </Text>
           )}
         </Box>
         <Box align='right' paddingTop='SP1'>
           <TextButton onClick={() => navigate(WixPageId.MANAGE_ORDERS)} size='small' suffixIcon={<ArrowRight />}>
-            Go to all orders
+            See all orders
           </TextButton>
         </Box>
       </Card.Content>
