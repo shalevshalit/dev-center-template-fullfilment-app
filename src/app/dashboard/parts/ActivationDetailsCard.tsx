@@ -11,22 +11,22 @@ export function ActivationDetailsCard() {
       <Card.Header title='Activation' />
       <Card.Divider />
       <Card.Content>
-        <Text>In order for the shipping rate logic to be applied, you need to activate it.</Text>
+        <Text>To apply your custom shipping rate logic, activate it as follows:</Text>
         <Box paddingTop='SP3'>
           <Text>
             <ol style={{ marginBottom: '0' }}>
               <li style={{ marginBottom: '0', marginLeft: '24px' }}>
-                Go to{' '}
+                Go to the{' '}
                 <TextButton onClick={() => navigate(WixPageId.SHIPPING_INFO)}>
                   Shipping and Delivery Settings
                 </TextButton>{' '}
-                page
+                dashboard page.
               </li>
               <li style={{ marginBottom: '0', marginLeft: '24px' }}>
-                Select the regions you&apos;d like to apply the shipping rate logic on and click on the Edit button
+                Select the regions to apply the shipping rate logic to and click <b>Edit</b>.
               </li>
               <li style={{ marginBottom: '0', marginLeft: '24px' }}>
-                Scroll down to the bottom of the page to the &quot;Installed Apps&quot; and switch ON the app toggle
+                Scroll down to <b>Installed apps</b> and click the toggle switch next to the app to enable it.
               </li>
             </ol>
           </Text>
