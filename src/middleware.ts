@@ -14,7 +14,7 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+      source: '/((?!_next/static|_next/image|favicon.ico).*)',
       // otherwise server actions do not work
       missing: [
         { type: 'header', key: 'next-router-prefetch' },

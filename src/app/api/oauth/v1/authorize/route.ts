@@ -15,7 +15,9 @@ export async function GET(request: NextRequest) {
   // the state object allows you to transfer information throughout the installation flow
   stateObject.testKey = 'test value';
 
-  const baseUrl = request.nextUrl.href.split('/api/oauth/')[0];
+  // process.env.URL is used in Netlify since request.nextUrl.href might include an invalid port number in Next 14
+  // see https://answers.netlify.com/t/error-x-forwarded-host-header-with-value-example-netlify-app-80-does-not-match-origin-header-with-value-example-netlify-app-from-a-forwarded-server-actions-request/106736
+  const baseUrl = process.env.URL || request.nextUrl.href.split('/api/oauth/')[0];
 
   return redirect(
     wixAppClient.auth.getInstallUrl({
