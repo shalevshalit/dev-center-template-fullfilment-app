@@ -8,14 +8,14 @@ export async function POST(request: Request) {
   console.info('Shipping rates::POST - called');
   const shippingRatesSPI = wixAppClient.spi<SPIDefinition<GetShippingRatesData, GetShippingRatesResponse>>();
 
-  // verify the data was not tampered with, and get the input
+  // Verify that the data was not altered, and get the input.
   const input = await shippingRatesSPI.processRequest(request);
 
   const appData = await getShippingAppData({ instanceId: input.metadata.instanceId });
 
   const currency = input.metadata.currency;
 
-  // return the shipping rates, in this case it is static
+  // Return the shipping rates.
   const result = shippingRatesSPI.result({
     shippingRates: appData.shippingMethods.map(({ code, title, logistics, costs, unitOfMeasure }) => ({
       code,

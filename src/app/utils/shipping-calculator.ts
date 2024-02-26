@@ -12,13 +12,13 @@ export function calculatePrice(
     }, 0) ?? 0;
 
   if (units <= 0) {
-    return 0; // Return 0 for invalid item counts
+    return 0; // Return 0 for an invalid item count.
   }
-  // Calculate the totalPrice based on the specified rule
+
+  // Calculate the total price based on the specified rule.
   const firstItemCost = shippingCosts.first;
   const secondItemCost = shippingCosts.second;
   const additionalItemCost = shippingCosts.thirdAndUp;
-
   if (units <= 1) {
     return firstItemCost;
   } else if (units <= 2) {

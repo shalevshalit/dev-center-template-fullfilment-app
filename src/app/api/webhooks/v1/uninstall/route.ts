@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     expectedEvents: [wixAppClient.webhooks.apps.AppRemoved],
   });
 
-  console.info('Webhook::uninstall - input is', {
+  console.info('Webhook::uninstall - input is:', {
     eventType,
     instanceId,
     payload,

@@ -16,7 +16,7 @@ export const useSDK = () => {
     () =>
       typeof window === 'undefined' || !inIframe()
         ? {
-            // trying to use any of the methods in SSR will fail
+            // The SDK is not initialized during server-side rendering or outside an iframe, making SDK methods unusable in these contexts.
             dashboard: {} as SDK,
           }
         : createClient({
