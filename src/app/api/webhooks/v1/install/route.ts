@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     expectedEvents: [wixAppClient.webhooks.apps.AppInstalled],
   });
 
-  console.info('Webhook::install - input is', {
+  console.info('Webhook::install - input is:', {
     eventType,
     instanceId,
     payload,

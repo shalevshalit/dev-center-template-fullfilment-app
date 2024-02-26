@@ -3,9 +3,10 @@
 import { createClient } from '@wix/sdk/client';
 import { headers } from 'next/headers';
 import { orders } from '@wix/ecom';
-// this should only be used in server components
 
-// Use this when serving a call which already sent a valid authorization header (with access token)
+// This utility function initializes and returns a Wix SDK client for use only in server components.
+// It is intended for scenarios where an HTTP request contains a valid authorization header,
+// or an access token is explicitly provided to the function.
 export const createSdk = (accessToken?: string | null) =>
   createClient({
     auth: {

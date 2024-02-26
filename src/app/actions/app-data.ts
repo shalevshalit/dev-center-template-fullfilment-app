@@ -48,10 +48,10 @@ const getDatabaseKey = async (appIdentifier: AppIdentifier) => {
   return `shipping-app-data:${instanceId}`;
 };
 
+// This is a shell function. Implement your own logic in this function to fetch data from an external database of your choice.
 export async function getShippingAppData(appIdentifier: AppIdentifier): Promise<ShippingAppData> {
   try {
     const databaseKey = await getDatabaseKey(appIdentifier);
-    // here you can implement your own logic to fetch the data from a DB
     console.log('getShippingAppData::key - ', databaseKey);
     return defaultAppData;
   } catch (e) {
@@ -60,8 +60,8 @@ export async function getShippingAppData(appIdentifier: AppIdentifier): Promise<
   }
 }
 
+// This is a shell function. Implement your own logic to persist data in an external database of your choice.
 export async function setShippingAppData(data: ShippingAppData, appIdentifier: AppIdentifier): Promise<void> {
   const databaseKey = await getDatabaseKey(appIdentifier);
-  // you are expected to properly implement it such that it would persist the data in a DB which is not part of the template
   console.log('persistShippingAppData::key: ', databaseKey, ' data: ', JSON.stringify(data, null, 2));
 }
